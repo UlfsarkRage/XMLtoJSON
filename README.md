@@ -3,6 +3,7 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 ## Code scaffolding
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+  - Clone:https://github.com/UlfsarkRage/XMLtoJSON.git
   - npm install -g @angular/cli
   - cd XMLtoJSON
   - npm install
