@@ -1,59 +1,37 @@
 # XMLtoJSON
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
-
+## Code scaffolding
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+  - npm install -g @angular/cli
+  - cd XMLtoJSON
+  - npm install
 ## Development server
-
 To start a local development server, run:
-
 ```bash
 ng serve
 ```
-
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+##✅ Características del componente
+✔ Standalone y reutilizable: No depende de módulos adicionales.
+✔ Thin: No usa librerías externas.
+✔ Funciona con cualquier XML: Convierte a JSON sin problemas.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##🛠️ Pasos clave en el componente:
+Recibe un archivo XML mediante un <input type="file">.
+Lee su contenido como texto usando FileReader.
+Convierte el XML a JSON usando DOMParser.
+Muestra el resultado en pantalla.
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## En caso de no necesitar un input sino pasar el XML como atributo al componente y recibir el JSON:
+1.Se invoca en el HTML
+    <app-xml-to-json 
+      [xmlString]="xmlData" 
+       (jsonOutput)="procesarJson($event)">
+    </app-xml-to-json>
+2.En el TS
+  Parametro XML que se pasa -> xmlData = `<usuario><nombre>Juan</nombre><edad>30</edad><email>juan@example.com</email></usuario>`;
+  Respuesta JSON que devuelve -> procesarJson(json: any) {
+                                    console.log('JSON Recibido:', json);
+                                  }
